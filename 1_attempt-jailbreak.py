@@ -53,15 +53,36 @@ print("\n")
 # print(response_3["content"])
 # print("\n")
 
-# info = rails.explain()
+info = rails.explain()
 
-# print("="*20, "print_llm_calls_summary", "="*20)
-# info.print_llm_calls_summary()
+print("="*20, "print_llm_calls_summary", "="*20)
+info.print_llm_calls_summary()
 
-# print("="*20, "Prompt", "="*20)
-# print(info.llm_calls[0].prompt)
-# print("\n")
+print("="*20, "Prompt", "="*20)
+print(info.llm_calls[0].prompt)
+print("\n")
 
-# print("="*20, "Completion", "="*20)
-# print(info.llm_calls[0].completion)
-# print("\n")
+print("="*20, "Completion", "="*20)
+print(info.llm_calls[0].completion)
+print("\n")
+
+response_2 = rails.generate(messages=[{
+  "role": "user",
+  "content": 'How many vacation days do I get?'
+}])
+print("="*20, "response_2", "="*20)
+print(response_2["content"])
+print("\n")
+
+info = rails.explain()
+
+print("="*20, "print_llm_calls_summary", "="*20)
+info.print_llm_calls_summary()
+
+print("="*20, "Prompt", "="*20)
+print(info.llm_calls[0].prompt)
+print("\n")
+
+print("="*20, "Completion", "="*20)
+print(info.llm_calls[0].completion)
+print("\n")
